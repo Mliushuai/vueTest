@@ -1,8 +1,8 @@
-# fontend
+# 这是一个模拟的项目
 
-> A Vue.js project
+> 技术栈 vue+vuerouter+elementUI
 
-## Build Setup
+## 项目准备
 
 ``` bash
 # 安装项目 建议使用cnpm
