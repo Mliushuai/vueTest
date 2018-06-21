@@ -5,13 +5,15 @@
 ## 项目准备
 
 ``` bash
-# 安装项目 建议使用cnpm
 npm install
+cnpm install
+# 安装项目 建议使用cnpm
 
-# 本地测试开发 本地端口 localhost:8080
 npm run dev
+# 本地测试开发 本地端口 localhost:8080
 
-# 线上打包
 npm run build
+# 线上打包
+
 
 ```
