@@ -5,8 +5,30 @@
 </template>
 
 <script>
+  import ApiBase from '@/BaseApi/index'
+  const api = ApiBase.ajaxBaseUrl;
   export default({
-    name:'home'
+    name:'home',
+    methods:{
+      commit:function () {
+        this.$axios({
+          url: api + "product_tasks",
+          method: "get",
+          data: {
+            pageSize: 10,
+            pageIndex: 1,
+          }
+        }).then(res => {
+
+        })
+      }
+    },
+    /**
+     * 使用vue生命周期中mounted 加载完成时调用接口
+     */
+    mounted() {
+      this.commit()
+    }
   })
 </script>
 
