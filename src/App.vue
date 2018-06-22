@@ -1,43 +1,27 @@
 <template>
   <div id="app">
-    <el-container>
-      <el-aside width="200px">
-        <router-link to="/Home">Home页</router-link>
-        <router-link to="/BomList">BomList</router-link>
-        <router-view></router-view>
-      </el-aside>
-      <el-container>
-        <el-header>
 
-        </el-header>
-        <el-main>
-          <BomList></BomList>
-          <Home></Home>
-        </el-main>
-        <el-footer>
+      <demo-header></demo-header>
+      1111
 
-        </el-footer>
-      </el-container>
-    </el-container>
+    <router-view>11</router-view>
+
   </div>
 </template>
 
 <script>
-  //1.先使用import导入你要在该组件中使用的子组件
-  import Home from '@/components/Home'
-  import BomList from '@/components/BomList'
+  import DemoHeader from '@/page/DemoHeader';
 
   export default {
     name: 'App',
-    //2.然后,在components中写入子组件
-    components:{BomList,Home}
+    components: {DemoHeader}
   }
 </script>
 
 <style>
   html, body, .el-container {
     height: 100%;
-    margin: 0px;
+    margin: 0px;background-color: aquamarine;
   }
 
   #app {

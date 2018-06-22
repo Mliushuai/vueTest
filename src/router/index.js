@@ -1,21 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Logo from '@/page/Logo'
-import App from '@/App'
-import Home from '@/components/Home'
-import BomList from '@/components/BomList'
+
+import DemoHome from '@/components/DemoHome'
+import DemoAbout from '@/components/DemoAbout'
+import DemoContact from '@/components/DemoContact'
 
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history', // 使用HTML5 History默认是哈希值的方式
-  router: [
+  mode: 'history',
+  routes:[
     {
-      path: '/Home',
-      component: Home
-    }, {
-      path: '/BomList',
-      component: BomList
-    }
+      path: '/home',
+      component:DemoHome,
+    },
+    {path: '/about', component:DemoAbout},
+    {path: '/contact', component:DemoContact}
   ]
 })
+
