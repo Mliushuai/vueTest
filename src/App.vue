@@ -7,24 +7,9 @@
 
 <script>
   import DemoHeader from '@/page/DemoHeader';
-  import ApiBase from '@/BaseApi/index'
-
-  const api = ApiBase.ajaxBaseUrl;
   export default {
     name: 'App',
     components: {DemoHeader},
-    mounted() {
-      this.$axios({
-        url: api + "product_tasks",
-        method: "get",
-        data: {
-          pageSize: 10,
-          pageIndex: 1,
-        }
-      }).then(res => {
-        console.log(res.data.data)
-      })
-    }
   }
 </script>
 
