@@ -1,27 +1,38 @@
 <template>
   <div id="app">
-
-      <demo-header></demo-header>
-      1111
-
+    <demo-header></demo-header>
     <router-view>11</router-view>
-
   </div>
 </template>
 
 <script>
   import DemoHeader from '@/page/DemoHeader';
+  import ApiBase from '@/BaseApi/index'
 
+  const api = ApiBase.ajaxBaseUrl;
   export default {
     name: 'App',
-    components: {DemoHeader}
+    components: {DemoHeader},
+    mounted() {
+      this.$axios({
+        url: api + "product_tasks",
+        method: "get",
+        data: {
+          pageSize: 10,
+          pageIndex: 1,
+        }
+      }).then(res => {
+        console.log(res.data.data)
+      })
+    }
   }
 </script>
 
 <style>
   html, body, .el-container {
     height: 100%;
-    margin: 0px;background-color: aquamarine;
+    margin: 0px;
+    background-color: aquamarine;
   }
 
   #app {
