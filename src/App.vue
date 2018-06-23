@@ -1,12 +1,23 @@
 <template>
   <div id="app">
-    <demo-header></demo-header>
-    <router-view>11</router-view>
+    <el-container>
+      <el-aside>
+        <demo-header></demo-header>
+      </el-aside>
+      <el-container>
+        <el-header>Header</el-header>
+        <el-main style="padding: 0">
+          <router-view></router-view>
+        </el-main>
+        <el-footer>Footer</el-footer>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
 <script>
   import DemoHeader from '@/page/DemoHeader';
+
   export default {
     name: 'App',
     components: {DemoHeader},
@@ -14,24 +25,20 @@
 </script>
 
 <style>
-  html, body, .el-container {
-    height: 100%;
+  html, body {
     margin: 0px;
-    background-color: aquamarine;
   }
-
   #app {
     position: relative;
     overflow: hidden;
-    height: 100%;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
   }
-
   .el-header, .el-footer {
+    height: 100px !important;
     background-color: #B3C0D1;
     color: #333;
     text-align: center;
@@ -39,11 +46,10 @@
   }
 
   .el-aside {
-    background-color: #D3DCE6;
+    background-color: rgb(84, 92, 100);
     color: #333;
     text-align: center;
     line-height: 200px;
-    height: 100%;
   }
 
   .el-main {
@@ -65,4 +71,5 @@
   .el-container:nth-child(7) .el-aside {
     line-height: 320px;
   }
+
 </style>
