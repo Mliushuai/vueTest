@@ -1,18 +1,41 @@
 <template>
   <div class="home">
-    <div>
-      11111
-    </div>
+    <el-table
+      :data="tableData"
+      stripe
+      row-key
+      style="width: 100%;height: 100%">
+      <el-table-column
+        prop="code"
+        label="物料编码"
+       >
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="物料名称"
+       >
+      </el-table-column>
+      <el-table-column
+        prop="model"
+        label="规格型号">
+      </el-table-column>
+    </el-table>
   </div>
 </template>
 
 <script>
   import ApiBase from '@/BaseApi/index'
+
   const api = ApiBase.ajaxBaseUrl;
-  export default({
-    name:'home',
-    methods:{
-      commit:function () {
+  export default ({
+    name: 'home',
+    data() {
+      return {
+        tableData: []
+      }
+    },
+    methods: {
+      commit: function () {
         this.$axios({
           url: api + "materials",
           method: "get",
@@ -21,7 +44,8 @@
             pageIndex: 1,
           }
         }).then(res => {
-
+//          console.log(res.data.data, "dadadada")
+          this.tableData = res.data.data
         })
       }
     },
@@ -35,7 +59,7 @@
 </script>
 
 <style scoped>
-  .home{
+  .home {
     width: 100%;
     height: 500px;
     background-color: pink;

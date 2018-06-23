@@ -5,7 +5,7 @@
         <demo-header></demo-header>
       </el-aside>
       <el-container>
-        <el-header>Header</el-header>
+        <el-header></el-header>
         <el-main style="padding: 0">
           <router-view></router-view>
         </el-main>
