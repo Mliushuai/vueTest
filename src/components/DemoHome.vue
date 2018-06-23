@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <h2>home</h2>
+    <div>
+      1
+    </div>
   </div>
 </template>
 
@@ -12,7 +14,7 @@
     methods:{
       commit:function () {
         this.$axios({
-          url: api + "product_tasks",
+          url: api + "materials",
           method: "get",
           data: {
             pageSize: 10,
