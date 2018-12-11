@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h2>about</h2>
+    <span>这是aginTest上的修改</span>
     <p>这是develop上的修改</p>
   </div>
 </template>
